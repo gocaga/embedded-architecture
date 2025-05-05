@@ -55,12 +55,14 @@ typedef enum
 //!< @todo [G0]Add 2x more typedef enums e.g. DIO_Mode_t and DIO_Resistor_t
 typedef enum
 {
-
+    DIO_MAX_MODE
 }DIO_Mode_e; 
 
 typedef enum
 {
-
+    DIO_PULLUP_DISABLE, //!< Used to disable the internal pull-ups
+    DIO_PULLUP_ENABLE,  //!< Used to enable internal pull-ups
+    DIO_MAX_RESISTOR    //!< Resistor states should be below this value
 }DIO_Resistor_e;
 
 typedef struct 
@@ -72,6 +74,11 @@ typedef struct
 }DIO_Config_t;
 
 //!< @todo add slew rate settings enum
+typedef enum
+{
+    FAST,
+    SLOW
+}DIO_Slew_t;
 
 
 #ifdef __cplusplus
